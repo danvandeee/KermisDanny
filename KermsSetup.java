@@ -1,5 +1,6 @@
 package kermisDanny;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class KermsSetup {
 	public void setup () {
 		
 		ArrayList<Attractie> attracties = new ArrayList<Attractie>(); 
-		
+		boolean isStopped = false;
 		
 		System.out.println("de kermis word uitgevouwen...");
 		 Attractie attractie = new ABotsAutos();
@@ -39,30 +40,63 @@ public class KermsSetup {
 		 System.out.println(apparaat.naam + " is " + apparaat.getIsAan()); 
 		 } //end for loop
 		 
-		 Scanner scanner = new Scanner (System.in);
+		 while (!isStopped) {
 		 System.out.println("kies een getal voor bijbehorende attractie: ");
 		 for (Attractie apparaat : attracties) {
 		 System.out.print((attracties.lastIndexOf(apparaat) +1)+ ":"+ apparaat.naam + "  ");
 		 } //end for each loop
 		 
 		 System.out.println("\n");
-		 System.out.print("input: ");
+		
 		 
+		 UserInput userinput = new UserInput();
+		 String lastInput = "";
 		 try {
-		 
-		 int input = scanner.nextInt();
-		 input--;
-		 System.out.println(attracties.get((input)).naam);
-		 
-		 attracties.get(input).attractieDraaien();
-		 
-		 String attractieAan = ((attracties.get(input).getIsAan()) ? "aan" : "uit");
-		 System.out.println("de attractie staat " + attractieAan);
-		 
+			 lastInput = userinput.getInput();
+			 
+			 if (lastInput.isEmpty()) {
+				 System.out.println("no input!");
+				 continue;
+			 }
+			 
+			 try {
+				 int theInput = Integer.parseInt(lastInput);	 
+				 System.out.println(attracties.get((theInput)).naam);
+				 attracties.get(theInput).attractieDraaien();
+			 } catch (NumberFormatException ex) {
+			 
+			 }
+			 
+			 
+			 if (lastInput.equals("o")) {
+				 
+				 System.out.println("kazza omzet is " + Kassa.omzet);
+				 
+			 }
+			 
+			 
 		 } catch (NullPointerException ex) {
-			 System.out.println("voer iets in!");
+			 System.out.println("no input!");
 			 
 		 }
+			 
+			 
+			
+			 
+		  
+			 
+			 
+			 
+			 
+		 
+		 
+		 
+		 } //end while not is stopped
+		 
+		 //String attractieAan = ((attracties.get(input).getIsAan()) ? "aan" : "uit");
+		// System.out.println("de attractie staat " + attractieAan);
+		 
+		 
 		 
 		 
 		 
