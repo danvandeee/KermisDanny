@@ -6,6 +6,7 @@ public class ASpiegelpaleis extends Attractie {
 		super();
 		naam = "spiegelpaleis";
 		isAan = false;
+		prijs = 2.75f;
 	}
 	
 	

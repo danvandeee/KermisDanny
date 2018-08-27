@@ -6,6 +6,7 @@ public class ASpin extends Attractie {
 		super();
 		naam = "spin";
 		isAan = false;
+		prijs = 2.25f;
 	}
 	
 	

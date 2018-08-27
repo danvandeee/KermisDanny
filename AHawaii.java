@@ -4,8 +4,9 @@ public class AHawaii extends Attractie {
 
 	public AHawaii() {
 		super();
-		super.naam = "hawaii";
-		super.isAan = false;
+		naam = "hawaii";
+		isAan = false;
+		prijs = 2.90f;
 	}
 	
 	
