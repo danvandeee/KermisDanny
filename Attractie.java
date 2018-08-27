@@ -4,6 +4,7 @@ public abstract class Attractie {
 public String naam = "name unavailable";
 public float prijs = 1.50f;
 public int oppervlakte = 10;
+public double omzetPerAttractie = 0;
 
 boolean isAan = false;
 	
@@ -22,7 +23,13 @@ public void attractieDraaien () {
 	
 	 System.out.println("de attractie " + naam + " staat aan");
 	 System.out.println("hij kost " + prijs);
-	 
+	 Kassa.omzet += prijs;
+	 omzetPerAttractie += prijs;
+}
+
+public void getOmzetAttractie () {
+	System.out.println(omzetPerAttractie);
+	
 }
 
 
