@@ -13,14 +13,26 @@ public class KermsSetup {
 		System.out.println("de kermis word uitgevouwen...");
 		 Attractie attractie = new ABotsAutos();
 		 ABotsAutos botsie = new  ABotsAutos();
+		 
+		 
+		 
 		 AHawaii hawaii = new AHawaii();
 		 ALadderKlimmen ladderKlimmen = new ALadderKlimmen();
+		 ASpiegelpaleis spiegelpaleis = new ASpiegelpaleis();
+		 ASpin spin = new ASpin();
+		 ASpookhuis spookhuis = new ASpookhuis();
 		 
 		 
 		 attracties.add(botsie);
 		 attracties.add(hawaii);
 		 attracties.add(ladderKlimmen);
+		 attracties.add(spiegelpaleis);
+		 attracties.add(spin);
+		 attracties.add(spookhuis);
+		 
 		 attracties.add(attractie);
+		 
+		 
 		 
 		 
 		 for (Attractie apparaat : attracties) {
@@ -41,6 +53,8 @@ public class KermsSetup {
 		 int input = scanner.nextInt();
 		 input--;
 		 System.out.println(attracties.get((input)).naam);
+		 
+		 attracties.get(input).attractieDraaien();
 		 
 		 String attractieAan = ((attracties.get(input).getIsAan()) ? "aan" : "uit");
 		 System.out.println("de attractie staat " + attractieAan);

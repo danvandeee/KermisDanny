@@ -2,6 +2,9 @@ package kermisDanny;
 
 public abstract class Attractie {
 public String naam = "name unavailable";
+public float prijs = 1.50f;
+public int oppervlakte = 10;
+
 boolean isAan = false;
 	
 public void turnOn () {
@@ -13,6 +16,13 @@ public void turnOn () {
 public boolean getIsAan () {
 	
 	return this.isAan;
+}
+
+public void attractieDraaien () {
+	
+	 System.out.println("de attractie " + naam + " staat aan");
+	 System.out.println("hij kost " + prijs);
+	 
 }
 
 

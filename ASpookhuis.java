@@ -6,6 +6,7 @@ public class ASpookhuis extends Attractie {
 		super();
 		naam = "spookhuis";
 		isAan = false;
+		prijs = 3.20f;
 	}
 	
 	
