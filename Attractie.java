@@ -1,7 +1,7 @@
 package kermisDanny;
 
 public abstract class Attractie {
-public String naam;
+public String naam = "name unavailable";
 boolean isAan = false;
 	
 public void turnOn () {
