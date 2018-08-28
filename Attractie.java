@@ -1,5 +1,7 @@
 package kermisDanny;
 
+import java.util.ArrayList;
+
 public abstract class Attractie {
 public String naam = "name unavailable";
 public float prijs = 1.50f;
@@ -14,13 +16,18 @@ public boolean getIsAan () {
 	return this.isAan;
 }
 
-public void attractieDraaien () {
+public void attractieDraaien (ArrayList<Attractie> attracties) {
 	
 	 System.out.println("de attractie " + naam + " staat aan");
 	 System.out.println("hij kost " + prijs);
 	 Kassa.omzet += prijs;
 	 omzetPerAttractie += prijs;
 	 aantalkaartjesVerkocht++;
+	 
+	 BelastingsInspecteur belastingsInspecteur = new BelastingsInspecteur();
+	 belastingsInspecteur.haalBelastingOp(attracties);
+	 
+	 
 }
 
 public double getOmzetAttractie () {

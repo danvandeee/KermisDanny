@@ -62,15 +62,7 @@ public class KermsSetup {
 			 try {   //deze try is voor als je een attractie kiest!
 				 int theInput = (Integer.parseInt(lastInput)-1);	 
 				 System.out.println(attracties.get((theInput)).naam);
-				 
-				 //dit stuk kan je gebruiken voor de gokatractie interface later!!
-				/* if (attracties.get(theInput).getIsAttractieRisicovol() == true) {			
-					 RisicoVolleAttractie gevaarlijkeattractie = (RisicoVolleAttractie) attracties.get(theInput);
-					 gevaarlijkeattractie.opstellingsKeuring();
-				 }
-				*/ 
-				 
-				 attracties.get(theInput).attractieDraaien();
+				 attracties.get(theInput).attractieDraaien(attracties);
 				System.out.println( "al " + attracties.get(theInput).getOmzetAttractie() + "is besteed!!");
 			 } catch (NumberFormatException ex) {
 			
