@@ -6,11 +6,20 @@ public abstract class RisicoVolleAttractie extends Attractie {
 	int aantalkeergedraaid = 0;
 	
 	public void attractieDraaien () {
-		
+		aantalkeergedraaid++;
+		boolean moetgekeurdWorden = opstellingsKeuring();
 		System.out.println("risicooooooo!!!!");
-		opstellingsKeuring();
+		//opstellingsKeuring();
+		
+		System.out.println("de attractie moet gekeurd worden? " + moetgekeurdWorden);
+		if (moetgekeurdWorden) {
+			System.out.println("DE KEURINGGGGG!!!");
+			aantalkeergedraaid = 0;
+		}
 		
 		super.attractieDraaien();
+		System.out.println(draaiLimiet);
+		System.out.println("aantal keer gedraaid voor keuring: " + aantalkeergedraaid);
 		
 		
 		
@@ -18,7 +27,15 @@ public abstract class RisicoVolleAttractie extends Attractie {
 	
 	
 	boolean opstellingsKeuring () {
-		return false;
+		
+		if (aantalkeergedraaid > draaiLimiet) {
+			
+			return true;
+		} else {
+			return false;	
+		}
+		
+	
 		
 		
 	}

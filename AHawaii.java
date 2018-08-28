@@ -10,11 +10,13 @@ public class AHawaii extends RisicoVolleAttractie {
 		draaiLimiet = 10;
 	}
 
+	
 	@Override
 	public boolean opstellingsKeuring() {
 		// TODO Auto-generated method stub
-		return false;
+		return super.opstellingsKeuring();
 	}
+	
 	
 	public boolean getIsAttractieRisicovol () {
 		return true;
