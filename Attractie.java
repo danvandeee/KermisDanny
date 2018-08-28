@@ -38,6 +38,11 @@ public int getKaartjesVerkocht() {
 	
 }
 
+public boolean getIsAttractieRisicovol () {
+	return false;
+	
+}
+
 
 
 } //end class

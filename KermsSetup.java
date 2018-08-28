@@ -54,14 +54,22 @@ public class KermsSetup {
 		 try {
 			 lastInput = userinput.getInput();
 			 
-			 if (lastInput.isEmpty()) {
+			 if (lastInput.isEmpty()) {  //check of de input niet leeg is
 				 System.out.println("no input!");
 				 continue;
 			 }
 			 
-			 try {
+			 try {   //deze try is voor als je een attractie kiest!
 				 int theInput = (Integer.parseInt(lastInput)-1);	 
 				 System.out.println(attracties.get((theInput)).naam);
+				 
+				 //dit stuk kan je gebruiken voor de gokatractie interface later!!
+				/* if (attracties.get(theInput).getIsAttractieRisicovol() == true) {			
+					 RisicoVolleAttractie gevaarlijkeattractie = (RisicoVolleAttractie) attracties.get(theInput);
+					 gevaarlijkeattractie.opstellingsKeuring();
+				 }
+				*/ 
+				 
 				 attracties.get(theInput).attractieDraaien();
 				System.out.println( "al " + attracties.get(theInput).getOmzetAttractie() + "is besteed!!");
 			 } catch (NumberFormatException ex) {
@@ -69,13 +77,13 @@ public class KermsSetup {
 			 }
 			 
 			 
-			 if (lastInput.equals("o")) {
+			 if (lastInput.equals("o")) {   							//als de input o is
 				 
 				 System.out.println("kazza omzet is " + Kassa.omzet);
 				 
 			 } //end input o
 			 
-			 if (lastInput.equals("k")) {
+			 if (lastInput.equals("k")) {								//als de input k is
 				 int totaalKaartjes = 0;
 				 for (Attractie apparaat : attracties) {
 				 
