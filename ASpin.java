@@ -14,7 +14,7 @@ public class ASpin extends RisicoVolleAttractie {
 	@Override
 	public boolean opstellingsKeuring() {
 		// TODO Auto-generated method stub
-		return false;
+		return super.opstellingsKeuring();
 	}
 	
 	public boolean getIsAttractieRisicovol () {
