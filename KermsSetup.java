@@ -60,11 +60,12 @@ public class KermsSetup {
 			 }
 			 
 			 try {
-				 int theInput = Integer.parseInt(lastInput);	 
+				 int theInput = (Integer.parseInt(lastInput)-1);	 
 				 System.out.println(attracties.get((theInput)).naam);
 				 attracties.get(theInput).attractieDraaien();
+				System.out.println( "al " + attracties.get(theInput).getOmzetAttractie() + "is besteed!!");
 			 } catch (NumberFormatException ex) {
-			 
+			
 			 }
 			 
 			 
@@ -72,7 +73,18 @@ public class KermsSetup {
 				 
 				 System.out.println("kazza omzet is " + Kassa.omzet);
 				 
-			 }
+			 } //end input o
+			 
+			 if (lastInput.equals("k")) {
+				 int totaalKaartjes = 0;
+				 for (Attractie apparaat : attracties) {
+				 
+				 System.out.println("aantal kaarten verkocht bij de " + apparaat.getNaam() + " " + apparaat.getKaartjesVerkocht());
+				 totaalKaartjes += apparaat.getKaartjesVerkocht();
+				 } //end fot loop
+				 
+				 System.out.println("dus in totaal zijn er " + totaalKaartjes + " kaartjes verkocht!");
+			 } //end input k
 			 
 			 
 		 } catch (NullPointerException ex) {
