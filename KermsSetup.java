@@ -73,15 +73,18 @@ public class KermsSetup {
 				 
 				 System.out.println("kazza omzet is " + Kassa.omzet);
 				 
-			 }
+			 } //end input o
 			 
 			 if (lastInput.equals("k")) {
-				 
+				 int totaalKaartjes = 0;
 				 for (Attractie apparaat : attracties) {
 				 
 				 System.out.println("aantal kaarten verkocht bij de " + apparaat.getNaam() + " " + apparaat.getKaartjesVerkocht());
-				 }
-			 }
+				 totaalKaartjes += apparaat.getKaartjesVerkocht();
+				 } //end fot loop
+				 
+				 System.out.println("dus in totaal zijn er " + totaalKaartjes + " kaartjes verkocht!");
+			 } //end input k
 			 
 			 
 		 } catch (NullPointerException ex) {
